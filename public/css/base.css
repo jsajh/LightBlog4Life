@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*reset*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td, a{margin: 0;padding: 0;}
+body, button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+font-family:Microsoft YaHei, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+font-size:12px;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+ul, ol {list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+a{text-decoration:none;color:#888;}
+a:hover{text-decoration:none;color:#333;}
+fieldset, img{border:none;}
+q:before, q:after {content:'';content:none;}
+.clearfix:before, .clearfix:after {content:"";display:table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;/*ie6,7*/}
+section, article, aside, header, footer, nav, dialog, figure {display:block;}
+
+/*public*/
+.fL{float:left;}
+.fR{float:right;}
+.cB{clear:both;}
+.fOH{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.center{margin:0 auto;}
+
+.bTbColor{color:#000;}/*black color to bright color*/
+.bTbColor:hover{color:#237DAC;}/*black color to bright color hover*/
+
+.bTdColor{color:#237DAC;}/*bright color to dim color*/
+.bTdColor:hover{color:#000;}/*bright color to dim color hover*/
+
+.dTbColor{color:#888;}/*dim color to bright color hover*/
+.dTbColor:hover{color:#237DAC;}/*dim color to bright color hover*/
+
+.inclineFont{font-style:italic;}
+
+/*header start*/
+.allHeaderBox{width:100%;background:#0099cb;padding:30px 0;}
+.blank10{height:10px;}
+/*header end*/
+
+/*mainBody start*/
+.headerBox, .mainBody{max-width:1250px;margin:0 auto;}
+.mainBody{position:relative;}
+
