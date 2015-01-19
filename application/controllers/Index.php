@@ -15,8 +15,9 @@ class IndexController extends Yaf_Controller_Abstract {
 	 * Blog内容页
 	 * @return [type]
 	 */
-	public function contentAction(){
+	public function contentAction($id = 0){
 		
+		return true;
 	}
 
 	public function testAction(){
