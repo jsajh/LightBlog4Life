@@ -1,5 +1,8 @@
 <?php
+define('APP_PATH', ROOT_PATH . '/application');
+define('LIB_PATH', APP_PATH . '/library');
+
 #项目HOST
 define('HOST', 'http://dev.yy');
 #项目资源目录
-define('PUBLIC_ACCESS', HOST . '/public');
+define('PUBLIC_ACCESS', HOST);

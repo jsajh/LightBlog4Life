@@ -1,16 +1,31 @@
 <?php
-class Model{
-	#增
-	#abstract public static function insert();
-	#删
-	#abstract public static function delete();
-	#改
-	#abstract public static function update();
-	#查
-	#abstract public static function find();
+include LIB_PATH . '/database/interface/Base.php';
+class Model implements Base{
+	public static $instance_list = array();
 
-	#实例化
-	#abstract public function getInstance();
+	public static function instance(){}
+	public static function insert($data){}
+	public static function delete($id){}
+	public static function update($id, $data){}
+	public static function find($condition){}
+
+	/**
+	 * 获取配置信息
+	 * @param  [string] 	$key 	[配置关键字]
+	 * @return [mixed]		[配置]
+	 */
+	public static function config($key){
+		return $GLOBALS['app']->getConfig()->$key;
+	}
+
+	/**
+	 * Model日志方法
+	 * @param  	[string] 	$content  	[内容]
+	 * @return  [boolean] 	[成功？ 是:true 否:false]
+	 */
+	public static function log($content){
+		return true;
+	}
 
 	/**
 	 * 魔术调用DB特性
@@ -18,7 +33,7 @@ class Model{
 	 * @param  [array] 		$arguments 		[参数]
 	 * @return [mixed]
 	 */
-	public function __call($function, $arguments){
+	#public function __callStatic($function, $arguments){
 		
-	}
+	#}
 }

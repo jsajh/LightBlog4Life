@@ -16,7 +16,8 @@ class IndexController extends Yaf_Controller_Abstract {
 	 * @return [type]
 	 */
 	public function contentAction($id = 0){
-		
+		$am = new ArticleModel();
+		echo $am->articleDemo();
 		return true;
 	}
 
