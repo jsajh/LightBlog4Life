@@ -1,0 +1,23 @@
+#article
+	{
+		"id" : 10000,
+		"title" : "Demo Article",
+		"content" : "Hello world, I am article content!",
+		"tag_list" : [1,2],
+		"tag":[{"id":1,"name":"HTML5"},{"id" : 2,"name" : "JS"}],
+	   "has_cover" : false,
+		"cover" : "http://www.baidu.com/img/bd_logo1.png",
+		"author" : "Chen",
+		"user_id" : 10000,
+		"date" : "2015-01-20 21:44:31"
+	}
+
+#user
+	{
+		"id" : 10000,
+		"name" : "Chen",
+		"git_name" : "wfengchen",
+		"email" : "wfengchen@live.com",
+		"password" : "202CB962AC59075B964B07152D234B70",
+		"icon" : "http://a.hiphotos.baidu.com/image/pic/item/c2cec3fdfc039245863cae088494a4c27d1e252f.jpg"
+	}
