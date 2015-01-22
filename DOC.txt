@@ -1,0 +1,5 @@
+--AJAX交互约定
+	#Success
+		{"r":true,"d":{"c":"Ajax Success!"}}
+	#Faild
+		{"r':false, "m":"Ajax Request Faild!"}
