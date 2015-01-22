@@ -28,15 +28,17 @@
 				</nav>
 			</div>
 		</header>
+
 		<div class="essayOne mainBody">
 			<div class="mainLeft">
+				<h1><?=$data['title']?></h1>
+				<div>
+					&nbsp;&nbsp;&nbsp;<strong>By:</strong> <?=$data['author']?>
+					&nbsp;&nbsp;&nbsp;<strong>Date:</strong> <?=$data['date']?>	
+				</div>
 				<div class="mainContent">
 					<div id="theEssay">
-					<!--把文章在这输出-->
-						<!--事例，此处可以删掉-->
-							<p style="text-align: left;">hello world!~</p><p style="text-align: left;">fdsafdsafsdf</p><p><span style="color: rgb(23, 54, 93);">fdsafsda</span><span style="color: rgb(255, 255, 0);">fdsafsdfsadfsa<span style="color: rgb(255, 0, 0);">fdsfsdafsdfdsfdsfdsaf</span></span></p><p><span style="color: rgb(255, 255, 0);"><span style="color: rgb(255, 0, 0);">fsdfsadfsfsda</span></span></p><p><span style="color: rgb(255, 255, 0);"><span style="color: rgb(255, 0, 0);">fsadf</span></span></p><p><span style="color: rgb(255, 255, 0);"><span style="color: rgb(255, 0, 0);">sadfsdafdsafdsdfdsfdsafsafsafsadfsafsdfdsfasdafsafdsa</span></span><br style="text-align: left;"/></p>
-						<!--事例，此处可以删掉end-->
-					<!--把文章在这输出end-->
+						<?=$data['content']?>
 					</div>
 				</div>
 			</div>

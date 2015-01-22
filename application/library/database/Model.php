@@ -1,13 +1,19 @@
 <?php
 include LIB_PATH . '/database/interface/Base.php';
 class Model implements Base{
+	#实例化对象列表
 	public static $instance_list = array();
 
+	/**
+	 * CURD
+	 * @see interface/Base.php
+	 */
 	public static function instance(){}
 	public static function insert($data){}
 	public static function delete($id){}
 	public static function update($id, $data){}
 	public static function find($condition){}
+	public static function findOne($id){}
 
 	/**
 	 * 获取配置信息
@@ -23,8 +29,8 @@ class Model implements Base{
 	 * @param  	[string] 	$content  	[内容]
 	 * @return  [boolean] 	[成功？ 是:true 否:false]
 	 */
-	public static function log($content){
-		return true;
+	public static function log($level, $content){
+		Log::$level($content);
 	}
 
 	/**

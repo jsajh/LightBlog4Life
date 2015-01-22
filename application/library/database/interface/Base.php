@@ -34,4 +34,11 @@ interface base{
 	 * @return [array]	[数据]
 	 */
 	public static function find($condition);
+
+	/**
+	 * 查找单条数据
+	 * @param  [integer] 	$id 	[ID]
+	 * @return [array]		[数据]
+	 */
+	public static function findOne($id);
 }
