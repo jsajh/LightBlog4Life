@@ -1,4 +1,4 @@
---AJAX交互约定
+--AJAX
 	#Success
 		{"r":true,"d":{"c":"Ajax Success!"}}
 	#Faild
