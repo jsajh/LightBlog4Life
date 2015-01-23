@@ -25,6 +25,7 @@ class IndexController extends Yaf_Controller_Abstract {
 		include MODEL_PATH . '/Article.php';
 		$article_model = new ArticleModel();
 		$data = $article_model->getArticle($id);
+
 		if(!$data){
 			goUrl();
 		}
