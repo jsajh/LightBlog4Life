@@ -3,13 +3,16 @@ class Cache{
 	const DRIVER_PATH = CACHE_PATH . '/driver';
 	public static $driver_type = array('Redis'=>1, 'Yac'=>1);
 	private static $driver_list = array();
+	private static $path;
 	private static $class;
 	private static $type;
 
 	public static function __callStatic($function, $arguments){
-		Cache::__init(get_called_class());
-		self::getDriver();
+		if(Cache::__init(get_called_class(), $function, $arguments)){
+			Cache::getDriver();
+		}
 		Cache::__clean();
+		return false;
 	}
 
 	/**
@@ -17,9 +20,21 @@ class Cache{
 	 * @param  [string] 	$class 		[当前类名]
 	 * @return [boolean]	[成功? 是:true 否:false]
 	 */
-	private static function __init($class){
-		self::$class = $class;
-		self::$type = $class::$type;
+	private static function __init($class, $function, arguments){
+		Cache::$class = $class;
+		if(!is_string($class) && $class === ''){
+			Cache::log('error', 'Cache Type undefined in config!');
+			return false;
+		}
+
+		Cache::$path = Cache::config('path');
+		if(empty(Cache::$path)){
+			Cache::log('error', 'Cache Path undefined in config!');
+			return false;
+		}
+
+
+		return true;
 	}
 
 	/**
@@ -27,8 +42,8 @@ class Cache{
 	 * @return [void]
 	 */
 	private static function __clean(){
-		self::$class = '';
-		self::$type = '';
+		Cache::$class = '';
+		Cache::$type = '';
 	}
 
 	/**
@@ -37,11 +52,12 @@ class Cache{
 	 * @return [object] 	[驱动对象]
 	 */
 	private static function getDriver(){
+		var_dump(0000);
 		if(!isset(self::$driver_type[self::$type])){
 			Cache::log('error', 'Undefined Cache Driver Type! Type: ' . self::$type);
 			return null;
 		}
-		
+		var_dump(1111);
 		if(!isset(self::$driver_list[self::$type])){
 			include CACHE_PATH . '/driver/' . self::$type . 'Driver.php';
 
@@ -50,7 +66,6 @@ class Cache{
 			$driver = new $class_name();
 			var_dump($driver->get('Hello'));
 			exit();
-			
 		}
 	}
 
@@ -70,5 +85,15 @@ class Cache{
 	 */
 	private static function config($key){
 		return $GLOBALS['app']->getConfig()->cache->$key;
+	}
+
+	/**
+	 * 获取详细配置信息
+	 * @param  [string] 	$method    		[方法]
+	 * @param  [array] 		$arguments 		[参数]
+	 * @return [array]    	[配置]
+	 */
+	private static function getDetailConfig($method, $arguments){
+		
 	}
 }

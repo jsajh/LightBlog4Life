@@ -36,7 +36,7 @@ class Log{
 				return false;	
 			}
 		}
-
+		
 		if(self::$log_content === ''){
 			return false;
 		}
