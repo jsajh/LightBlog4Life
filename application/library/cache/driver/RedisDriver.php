@@ -1,6 +1,16 @@
 <?php
-load(CACHE_PATH . '/driver/Driver.php');
-class RedisDriverv extends Driver{
+/**
+ * 
+ */
+load(LIB_CACHE_PATH . '/driver/Driver.php');
+class RedisDriver extends Driver{
+	public function getInstance(){
+		$redis = new Redis();
+		var_dump($redis);
+		var_dump($redis->connect('127.0.0.1'));
+		var_dump($redis->set('haha','Hello'));
+	}
+
 	public function get($key){
 		return 'This is get!';
 	}
