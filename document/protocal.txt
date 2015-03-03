@@ -1,5 +1,27 @@
 --AJAX
-	#Success
+	# Success Demo
 		{"r":true,"d":{"c":"Ajax Success!"}}
-	#Faild
+	# Faild Demo
 		{"r':false, "m":"Ajax Request Faild!"}
+	# Get Tag List
+		{"r": true, "d":{
+			{
+				"id":10000,
+				"name":"HTML",
+				"items":{
+					{"id": 10000, "name": "JS"},
+					{"id": 10001, "name": "H5"},
+					{"id": 10002, "name": "CSS"},
+				}
+			},
+			{
+				"id":10001,
+				"name":"HTML",
+				"items":{
+					{"id": 10003, "name": "JS"},
+					{"id": 10004, "name": "H5"},
+					{"id": 10005, "name": "CSS"},
+				}
+			}
+
+		}}
